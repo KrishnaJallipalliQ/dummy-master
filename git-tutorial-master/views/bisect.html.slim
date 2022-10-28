@@ -1,0 +1,28 @@
+h1 Bisect
+p
+  |Todos os caras bacanas (que não usam o termo bacana) estão falando sobre bisect, como fazê-lo?
+p
+  |E o mais importante, para que serve?
+p
+  |No iframe abaixo temos um template com problema. Sem nos preocuparmos em corrigi-lo agora ou saber em que arquivo está o erro, vamos encontrar o commit em que o problema aparece!
+iframe src="/pages/error" style="width: 640px; height: 480px;"
+p
+  |Com o git bisect podemos encontrar o commit exato em que um erro foi introduzido no código e assim facilitar o rastramento de bugs em grandes bases de código.
+p
+  |Começamos com o comando
+xmp
+  |git bisect start
+p
+  |Como o commit atual está com problemas marcamos ele como bad:
+xmp
+  |git bisect bad
+p
+  |Agora vamos procurar um commit em que o código funcione, normalmente a última tag, release, whatever...
+p
+  |Começamos marcando esse commit como good, a dica aqui é, comecem pelo commit b540490da5701154e7d8bbf2d325ded6b2bd165d
+xmp
+  |git bisect good b540490da5701154e7d8bbf2d325ded6b2bd165d
+p
+  |Depois disso podemos prosseguir com os testes e marcando com o git bisect bad até acharmos o último commit em que o código funciona
+
+
